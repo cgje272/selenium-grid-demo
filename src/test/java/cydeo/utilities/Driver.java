@@ -53,12 +53,12 @@ public class Driver {
                 case "remote-chrome":
                     try {
                         // assign your grid server address
-                        String gridAddress = "100.24.34.37";
+                        String gridAddress = "52.201.221.183";
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
-                        ChromeOptions chromeOptions = new ChromeOptions();
-                        chromeOptions.addArguments("--start-maximized");
-                        driverPool.set(new RemoteWebDriver(url, chromeOptions));
-                        //driverPool.set(new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"),desiredCapabilities));
+                      DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                      desiredCapabilities.setBrowserName("chrome");
+                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                        //driverPool.set(new RemoteWebDriver(new URL("http://52.201.221.183/wd/hub"),desiredCapabilities));
 
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -67,12 +67,12 @@ public class Driver {
                 case "remote-firefox":
                     try {
                         // assign your grid server address
-                        String gridAddress = "34.239.154.115";
+                        String gridAddress = "52.201.221.183";
                         URL url = new URL("http://"+ gridAddress + ":4444/wd/hub");
-                        FirefoxOptions firefoxOptions=new FirefoxOptions();
-                        firefoxOptions.addArguments("--start-maximized");
-                        driverPool.set(new RemoteWebDriver(url, firefoxOptions));
-                        //driverPool.set(new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"),desiredCapabilities));
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("firefox");
+                        driverPool.set(new RemoteWebDriver(url, desiredCapabilities));
+                        //driverPool.set(new RemoteWebDriver(new URL("http://52.201.221.183/wd/hub"),desiredCapabilities));
 
                     } catch (Exception e) {
                         e.printStackTrace();
